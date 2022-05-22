@@ -203,6 +203,9 @@ Console.WriteLine(negacao);
 // estrutura condicional
 
 /*
+
+// if:
+
 aceita como valor entre parênteses uma comparação
 composto por if, else, e else if
 if para a condição atendida
@@ -236,3 +239,223 @@ if(maisUmaVezAIdade >= maioridade) {
 
 }
 
+/*
+
+// switch
+
+encadeia uma série de decisões.
+break é necessário para a parada da estrutura
+
+switch() {
+    case "":
+        ...;
+        break;
+    case "":
+        ...;
+        break;
+    case "":
+        ...;
+        break;
+    default:
+        ...;
+        break;
+}
+
+*/
+
+bool? valorSwitch = true;
+switch(valorSwitch) {
+    case true:
+        Console.WriteLine("verdadeiro");
+        break;
+    case false:
+        Console.WriteLine("falso");
+        break;
+    default:
+        Console.WriteLine("nulo");
+        break;
+}
+
+// laços de repetição
+
+/*
+// for
+
+repete uma estrutura de instruções sob determinada condição
+
+são necessários 3 parâmetros:
+    - contador
+    - condição
+    - incremento
+
+for(var i = 0; i <= 5; i++) {
+    ...
+}
+*/
+
+for(var i = 0; i <= 5; i++) {
+    
+    Console.WriteLine("item: " + i);
+
+}
+
+
+/*
+// while
+
+repete uma estrutura de instruções sob determinada condição enquanto essa condição for verdadeira
+
+é necessários uma condição verdadeira para o funcionamento
+
+while(true){
+    ...
+}
+*/
+
+int valorWhile = 0;
+while (valorWhile <= 5 ) {
+    
+    Console.WriteLine("Item: " + valorWhile);
+    valorWhile += 1;
+
+}
+
+/*
+// do-while
+
+repete uma estrutura de instruções sob determinada condição enquanto essa condição for verdadeira
+faz a execução da estrutura de instruçãoao menos uma vez
+
+é necessários uma condição verdadeira para o funcionamento
+
+do {
+    ...
+} while (true)
+*/
+
+int valorDoWhile = 0;
+do {
+    
+    Console.WriteLine("Item: " + valorDoWhile);
+    valorDoWhile = valorDoWhile + 1;
+
+} while (valorDoWhile < 5);
+
+// funções ou métodos
+
+/*
+
+agrupa um conjunto de instruções e os executa conforme o nome é invocado
+recebe parametros personalizados e retorna valores de acordo com as instruções de dentro
+
+static tipoDeRetorno nome(string parametro) {
+
+    ...;
+    return ...; //  caso não seja void
+}
+
+nome(parametro);
+
+*/
+
+// criando um método
+static void MeuMetodo(string parametro) {
+
+    // realizando uma instrução quando o método for chamado
+    Console.WriteLine(parametro);
+
+}
+
+// invocando um método
+MeuMetodo("C# é muito legal!");
+
+// tipos de referência e tipos de valor
+
+// tipo de valor acessa e armazena um valor na parte stack da memória
+
+int x = 25; // instancia um valor na memória
+int y = x; // faz uma cópia de x em y na memória
+Console.WriteLine(x);
+Console.WriteLine(y);
+x = 32; // altera somente x
+Console.WriteLine(x);
+Console.WriteLine(y);
+
+// tipo de referência acessa e armazena o endereço do valor na parte heap da memória
+// depende do garbage collector para limpar o heap, nesse caso a referência é excluída da memória
+
+var arr = new string[2];
+arr[0] = "Item 1";
+var arr2 = arr;
+Console.WriteLine(arr[0]);
+Console.WriteLine(arr2[0]);
+
+arr[0] = "Item alterado"; // altera as duas listas
+Console.WriteLine(arr[0]);
+Console.WriteLine(arr2[0]);
+
+// structs
+
+/*
+
+// cria um tipo próprio e personalizado de objeto
+// sempre é chamado com a palavra reservada new, e é quem instancia um tipo qualquer
+
+struct nome {
+    // propriedades
+
+    // métodos
+}
+
+var variavel = new nome()
+
+// exemplo com erro por conta da mudança de versão do C#
+struct Produto {
+    
+    public Produto( int id, string nome, double preco) {
+
+        Id = id;
+        Nome = nome;
+        Preco = preco;
+
+    }
+
+    public int Id;
+    public string Nome;
+    public float Preco;
+
+    public double PrecoEmDolar(double dolar) {
+
+        return Preco * dolar;
+    }
+
+}
+
+var produto = new Produto(id=1, nome='qualquer', preco=5.0);
+
+Console.WriteLine(produto.Preco);
+*/
+
+// enumeradores
+
+/*
+enum ENome {
+
+    // codigo = 1;
+    // codigoOutro = 2;
+    // codigoNovo = 3;
+
+}
+
+// exemplo com erro por conta da mudança de versão do C#
+enum ETipoProduto {
+
+    produto = 1;
+    servico = 2;
+
+}
+
+Console.WriteLine((int)ETipoProduto.produto);
+Console.WriteLine((int)ETipoProduto.servico);
+
+*/
