@@ -15,7 +15,8 @@ static void Memu() {
 
     string data = Console.ReadLine().ToLower();
     char type = char.Parse(data.Substring(data.Length - 1, 1));
-    Console.WriteLine(type);
+    int time = int.Parse(data.Substring(0, data.Length - 1));
+    Console.WriteLine(time);
 }
 
 static void Start(int time) {
