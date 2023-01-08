@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-static void Memu() {
+using System.ComponentModel.Design;
+
+static void Menu() {
     Console.Clear();
     Console.WriteLine("-----------------------------------");
     Console.WriteLine(" ");
@@ -13,10 +15,23 @@ static void Memu() {
     Console.WriteLine(" ");
     Console.WriteLine("-----------------------------------");
 
-    string data = Console.ReadLine().ToLower();
+    string? data = Console.ReadLine().ToLower();
+    if (data == "" || data == "0") {
+        Environment.Exit(0);
+    }
     char type = char.Parse(data.Substring(data.Length - 1, 1));
     int time = int.Parse(data.Substring(0, data.Length - 1));
-    Console.WriteLine(time);
+    int multiplier = 1;
+
+    if (time == 0) {
+        Environment.Exit(0);
+    }
+
+    if (type == 'm') {
+        multiplier = 60;
+    }
+
+    Start(time * multiplier);
 }
 
 static void Start(int time) {
@@ -31,6 +46,7 @@ static void Start(int time) {
     Console.Clear();
     Console.WriteLine("Stopwatch finalizado.");
     Thread.Sleep(2500);
+    Menu();
 }
 
-Memu();
+Menu();
