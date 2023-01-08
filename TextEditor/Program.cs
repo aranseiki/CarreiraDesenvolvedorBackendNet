@@ -40,14 +40,32 @@ static void Edit() {
     Console.WriteLine("-----------------------------------");
     Console.WriteLine(" ");
 
-    string text = "";
+    string? text = "";
 
     do {
         text += Console.ReadLine();
         text += Environment.NewLine;
     } while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-    Console.Write(text);
+    Save(text);
+}
+
+static void Save(string text) {
+    Console.Clear();
+    Console.WriteLine("Digite o caminho de salvamento do arquivo: ");
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine(" ");
+
+    var path = Console.ReadLine();
+    using (var file = new StreamWriter(path)) {
+        file.Write(text);
+    }
+
+    Console.WriteLine(" "); 
+    Console.WriteLine("-----------------------------------");    
+    Console.WriteLine($"Arquivo {path} salvo com sucesso.");
+    Console.ReadLine();
+    Menu();
 }
 
 Menu();
