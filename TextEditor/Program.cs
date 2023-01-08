@@ -30,7 +30,21 @@ static void Menu() {
 }
 
 static void open() {
+    Console.Clear();
+    Console.WriteLine("Digite o caminho do arquivo: ");
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine(" ");
 
+    string path = Console.ReadLine();
+
+    using (var file = new StreamReader(path)) {
+        string text = file.ReadToEnd();
+        Console.WriteLine(text);
+    }
+
+    Console.WriteLine(" ");
+    Console.ReadLine();
+    Menu();
 }
 
 static void Edit() {
