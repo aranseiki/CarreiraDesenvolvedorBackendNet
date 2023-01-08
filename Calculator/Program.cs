@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.Clear();
-Console.Beep(5000, 1000);
 Menu();
 
 static float PrimeiroValor() {
@@ -35,9 +34,9 @@ static float SegundoValor() {
     return valor2;
 }
 
-static void ResultadoOperacao(float resultado) {
+static void ResultadoOperacao(string operacao, float resultado) {
     Console.WriteLine(" ");
-    Console.WriteLine($"O resultado da divisão é: {resultado}");
+    Console.WriteLine($"O resultado da {operacao} é: {resultado}");
 }
 
 static void RetornarAoMenu() {
@@ -67,27 +66,25 @@ static void Menu() {
         Menu();
     } else {
         short? resposta = short.Parse(valor);
+        string operacao = "";
+        float resultado = 0;
 
         switch (resposta) {
             case 1:
-                float resultado = Soma(PrimeiroValor(), SegundoValor());
-                ResultadoOperacao(resultado);
-                RetornarAoMenu();
+                operacao = "soma";
+                resultado = Soma(PrimeiroValor(), SegundoValor());                
                 break;
             case 2:
+                operacao = "subtração";
                 resultado = Subtracao(PrimeiroValor(), SegundoValor());
-                ResultadoOperacao(resultado);
-                RetornarAoMenu();
                 break;
             case 3:
+                operacao = "multiplicação";
                 resultado = Multiplicacao(PrimeiroValor(), SegundoValor());
-                ResultadoOperacao(resultado);
-                RetornarAoMenu();
                 break;
             case 4:
+                operacao = "divisão";
                 resultado = Divisao(PrimeiroValor(), SegundoValor());
-                ResultadoOperacao(resultado);
-                RetornarAoMenu();
                 break;
             case 5:
                 Environment.Exit(0);
@@ -96,6 +93,9 @@ static void Menu() {
                 Menu();
                 break;
         }
+
+        ResultadoOperacao(operacao, resultado);
+        RetornarAoMenu();
     }
 }
 
