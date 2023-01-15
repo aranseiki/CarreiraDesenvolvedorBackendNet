@@ -1,5 +1,6 @@
 using System;
 
+
 namespace EditorHTML {
     public static class Menu {
         public static void Show() {
@@ -63,7 +64,7 @@ namespace EditorHTML {
         public static void HandleMenuOption(short option) {
             switch (option) {
                 case 1:
-                    Console.WriteLine("Editor");
+                    Editor.Show();
                     break;
                 case 2:
                     Console.WriteLine("View");
