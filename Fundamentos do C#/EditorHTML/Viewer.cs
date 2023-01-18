@@ -5,8 +5,8 @@ namespace EditorHTML {
 	public class Viewer {
 		public static void Show(string text) {
             Console.Clear();
-            // Console.BackgroundColor = ConsoleColor.While;
-            // Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
             Console.WriteLine("MODO DE VISUALIZAÇÂO");
             Console.WriteLine("==================");
@@ -30,7 +30,7 @@ namespace EditorHTML {
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine(' ');
                 } else {
-                    // Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine(words[item]);
                     Console.WriteLine(' ');
                 }

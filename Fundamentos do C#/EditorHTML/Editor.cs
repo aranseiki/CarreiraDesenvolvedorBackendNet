@@ -5,8 +5,8 @@ namespace EditorHTML {
     public static class Editor {
         public static void Show() {
             Console.Clear();
-            // Console.BackgroundColor = ConsoleColor.While;
-            // Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
             Console.WriteLine("MODO EDITOR");
             Console.WriteLine("==================");
