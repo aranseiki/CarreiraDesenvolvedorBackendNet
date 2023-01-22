@@ -1,7 +1,11 @@
 namespace Balta.ContentContext {
-    public class Content { 
-        public int Id { get; set; }
-        public int Title { get; set; }
-        public int Url { get; set; }
+    public abstract class Content {
+        public Content() {
+            Id = Guid.NewGuid(); // SPOF - Single Point Of Fail
+        }
+
+        public Guid Id { get; set; }
+        public string? Title { get; set; }
+        public string? Url { get; set; }
     }
 }
