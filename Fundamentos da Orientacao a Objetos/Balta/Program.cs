@@ -26,7 +26,6 @@ internal class Program {
         var careerItem = new CareerItem(1, "Comece por aqui", "", coursesOOP);
         var careerItem2 = new CareerItem(2, "Aprenda OOP", "", coursesCSharp);
         var careerItem3 = new CareerItem(3, "Aprenda .Net", "", coursesAspNet);
-
         careerDotNet.Items.Add(careerItem2);
         careerDotNet.Items.Add(careerItem3);
         careerDotNet.Items.Add(careerItem);
@@ -42,4 +41,4 @@ internal class Program {
             }
         }
     }
-}   
+}
