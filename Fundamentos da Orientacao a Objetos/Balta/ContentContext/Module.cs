@@ -7,4 +7,4 @@ namespace Balta.ContentContext {
         public string? Title { get; set; }
         public IList<Lecture> Lectures { get; set; }
     }
-}I9
+}
