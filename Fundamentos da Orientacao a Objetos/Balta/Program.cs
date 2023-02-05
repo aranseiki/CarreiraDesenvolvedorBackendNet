@@ -1,4 +1,5 @@
 ﻿using Balta.ContentContext;
+using Balta.NotificationContext;
 
 internal class Program {
     private static void Main(string[] args) {
@@ -23,7 +24,7 @@ internal class Program {
 
         var careers = new List<Career>();
         var careerDotNet = new Career("Especialista .Net", "especialista-dotnet");
-        var careerItem = new CareerItem(1, "Comece por aqui", "", coursesOOP);
+        var careerItem = new CareerItem(1, "Comece por aqui", "", null);
         var careerItem2 = new CareerItem(2, "Aprenda OOP", "", coursesCSharp);
         var careerItem3 = new CareerItem(3, "Aprenda .Net", "", coursesAspNet);
         careerDotNet.Items.Add(careerItem2);
@@ -38,6 +39,11 @@ internal class Program {
                 Console.WriteLine($"{item.Order} - {item.Title}");
                 Console.WriteLine(item.Course?.Title);
                 Console.WriteLine(item.Course?.Level);
+            
+            }
+
+            foreach (var notification in career.Notifications) {
+                Console.WriteLine($"{notification.Property} - {notification.Message}");
             }
         }
     }
