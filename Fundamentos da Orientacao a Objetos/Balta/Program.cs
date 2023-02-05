@@ -1,5 +1,6 @@
 ﻿using Balta.ContentContext;
 using Balta.NotificationContext;
+using Balta.SubscriptionContext;
 
 internal class Program {
     private static void Main(string[] args) {
@@ -41,6 +42,10 @@ internal class Program {
                 Console.WriteLine(item.Course?.Level);
             
             }
+
+            var payPalSubscription = new PayPalSubscription();
+            var Student = new Student();
+            Student.CreateSubscription(payPalSubscription);
 
             foreach (var notification in career.Notifications) {
                 Console.WriteLine($"{notification.Property} - {notification.Message}");
