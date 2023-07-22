@@ -1,0 +1,1 @@
+CREATE INDEX [IX_Aluno_Email] ON [Aluno](Email)
